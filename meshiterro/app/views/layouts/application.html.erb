@@ -10,9 +10,12 @@
   </head>
 
   <body>
-    
+
     <!--ログアウト機能-->
     <% if user_signed_in? %>
+     <li>
+      <%= link_to '投稿フォーム',new_post_image_path %>
+     </li>
      <li>
       <%= link_to "ログアウト",destroy_user_session_path,method: :delete %>
      </li>
@@ -20,13 +23,13 @@
      <li>
       <%= link_to "新規投稿",new_user_registration_path %>
      </li>
-    
+
      <li>
       <%= link_to "ログイン",new_user_session_path %>
      </li>
     <% end %>
     <!--ログアウト機能-->
-    
+
     <%= yield %>
   </body>
 </html>
